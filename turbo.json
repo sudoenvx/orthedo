@@ -15,7 +15,8 @@
             "cache": false,
             "dependsOn": [
                 "^typecheck",
-                "^db:generate"
+                "^db:generate",
+                "^build",
             ]
         },
         "lint": {
