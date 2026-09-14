@@ -1,0 +1,13 @@
+{
+    "name": "@orthedo/ui",
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {},
+    "dependencies": {
+        "react": "^19.3.0"
+    },
+    "devDependencies": {
+        "@types/react": "^19.3.0",
+        "typescript": "^6.0.2"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "@orthedo/api",
+    "type": "module",
+    "version": "0.1.0",
+    "main": "./src/index.ts",
+    "scripts": {
+        "dev": "bun run src/index.ts"
+    },
+    "devDependencies": {
+        "esbuild": "^0.28.2",
+        "tsx": "^4.23.13",
+        "typescript": "^6.0.2"
+    },
+    "dependencies": {
+        "express": "^5.2.1"
+    }
+}

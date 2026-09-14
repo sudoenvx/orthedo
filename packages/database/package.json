@@ -1,0 +1,16 @@
+{
+    "name": "@orthedo/database",
+    "version": "0.1.0",
+    "description": "shared database package",
+    "type": "module",
+    "scripts": {
+
+    },
+    "dependencies": {
+
+    },
+    "devDependencies": {
+        "tsx": "^4.23.13",
+        "typescript": "^6.0.2"
+    }
+}
