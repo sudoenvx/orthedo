@@ -1,8 +1,27 @@
 {
   "extends": "@orthedo/tsconfig/react-library.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist"
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "resolvePackageJsonImports": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@orthedo/theme": ["../theme/src/index.ts"],
+      "@orthedo/utils": ["../utils/src/index.ts"]
+    }
   },
-  "include": ["src/**/*"]
+  "references": [
+    { "path": "../theme" },
+    { "path": "../utils" }
+  ],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

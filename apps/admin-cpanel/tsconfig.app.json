@@ -1,7 +1,14 @@
 {
   "extends": "@orthedo/tsconfig/vite.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@orthedo/ui": ["../../packages/ui/src/index.ts"],
+      "@orthedo/theme": ["../../packages/theme/src/index.ts"],
+      "@orthedo/utils": ["../../packages/utils/src/index.ts"],
+      "@orthedo/api-client": ["../../packages/api-client/src/index.ts"]
+    }
   },
   "include": ["src"]
 }

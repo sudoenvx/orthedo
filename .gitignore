@@ -13,3 +13,5 @@ dist
 pnpm-debug.log*
 logs
 *.log
+
+*.tsbuildinfo

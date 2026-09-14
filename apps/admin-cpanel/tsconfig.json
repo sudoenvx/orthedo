@@ -2,6 +2,20 @@
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    { "path": "./tsconfig.node.json" },
+    { "path": "../../packages/ui" },
+    { "path": "../../packages/theme" },
+    { "path": "../../packages/utils" },
+    { "path": "../../packages/api-client" }
+  ],
+
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@orthedo/ui": ["../../packages/ui/src/index.ts"],
+      "@orthedo/theme": ["../../packages/theme/src/index.ts"],
+      "@orthedo/utils": ["../../packages/utils/src/index.ts"],
+      "@orthedo/api-client": ["../../packages/api-client/src/index.ts"]
+    }
+  }
 }

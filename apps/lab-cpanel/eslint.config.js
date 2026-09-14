@@ -17,6 +17,11 @@ export default defineConfig([
     ],
     languageOptions: {
       globals: globals.browser,
+      parserOptions: {
+        projectService: true,
+        // This dynamically points to the directory of the file being linted
+        tsconfigRootDir: import.meta.dirname, 
+      },
     },
   },
 ])
