@@ -1,5 +1,5 @@
 import { type PrismaClient } from "../../src";
 
-export async function runSeeders(prisma: PrismaClient): Promise<void> {
+export async function runSeeders(_prisma: PrismaClient): Promise<void> {
     
 }
