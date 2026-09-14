@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "rootDirs": [
+      "src",
+      "prisma"
+    ],
+
+    "outDir": "dist",
+
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "prisma/**/*",
+    "**/*.d.ts"
+  ],
+
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/generated"
+  ]
+}
