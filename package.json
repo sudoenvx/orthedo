@@ -6,7 +6,10 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "build:admin": "turbo run build --filter=@orthedo/admin-cpanel",
+    "build:lab": "turbo run build --filter=@orthedo/lab-cpanel",
+    "dev:admin": "turbo run dev --filter=@orthedo/admin-cpanel"
   },
   "license": "ISC",
   "devEngines": {
@@ -18,7 +21,7 @@
   },
   "type": "module",
   "devDependencies": {
-    "@types/node": "^26.5.1",
+    "@types/node": "^24.13.4",
     "turbo": "^2.10.12",
     "typescript": "^6.0.2"
   }

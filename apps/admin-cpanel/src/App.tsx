@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@orthedo/ui';
+
 import { formatCurrency, formatNumber, formatDate } from '@orthedo/utils';
 import {
   ShieldCheck,
@@ -16,6 +16,7 @@ import {
   Layers,
   Sparkles
 } from 'lucide-react';
+import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '@orthedo/ui/components';
 
 export default function AdminApp() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -36,7 +37,7 @@ export default function AdminApp() {
   return (
     <div className="min-h-screen bg-background text-foreground flex">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-border bg-card p-6 flex flex-col justify-between hidden md:flex">
+      <aside className="w-64 border-r border-border bg-card p-6 flex-col justify-between hidden md:flex">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
@@ -61,11 +62,10 @@ export default function AdminApp() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    activeTab === item.id
-                      ? 'bg-primary text-primary-foreground shadow-sm'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                  }`}
+                  className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${activeTab === item.id
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                    }`}
                 >
                   <Icon className="h-4 w-4" />
                   {item.label}
@@ -86,6 +86,58 @@ export default function AdminApp() {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
+        <DropdownMenu>
+          <DropdownMenuTrigger render={<Button variant="default">Open</Button>} />
+          <DropdownMenuContent className="w-52" align="start">
+            <DropdownMenuGroup>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuItem>
+                Profile
+                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Billing
+                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Settings
+                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>Team</DropdownMenuItem>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Email</DropdownMenuItem>
+                    <DropdownMenuItem>Message</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>More...</DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuPortal>
+              </DropdownMenuSub>
+              <DropdownMenuItem>
+                New Team
+                <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>GitHub</DropdownMenuItem>
+              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem disabled>API</DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                Log out
+                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
         {/* Top Header */}
         <header className="h-16 border-b border-border px-8 flex items-center justify-between bg-card/60 backdrop-blur sticky top-0 z-10">
           <div className="flex items-center gap-4 flex-1 max-w-md">

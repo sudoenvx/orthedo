@@ -11,11 +11,11 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "components": "@orthedo/ui",
+    "utils": "@orthedo/ui/src/lib/utils",
+    "ui": "@orthedo/ui/src/components/ui",
+    "lib": "@orthedo/ui/src/lib",
+    "hooks": "@orthedo/ui/src/hooks"
   },
   "iconLibrary": "lucide"
 }

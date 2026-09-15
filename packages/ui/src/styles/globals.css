@@ -1,4 +1,5 @@
-@import "@orthedo/theme/src/index.css";
+@import "@orthedo/theme/index.css";
+@import "shadcn/tailwind.css";
 
-@source "./";
-@source "../../src/components/**/*.{ts,tsx,js,jsx}";
+@source "../**/*.{js,ts,jsx,tsx}";
+@source "../../../packages/theme/src/**/*.{js,ts,jsx,tsx}";

@@ -10,12 +10,6 @@
   ],
 
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"],
-      "@orthedo/ui": ["../../packages/ui/src/index.ts"],
-      "@orthedo/theme": ["../../packages/theme/src/index.ts"],
-      "@orthedo/utils": ["../../packages/utils/src/index.ts"],
-      "@orthedo/api-client": ["../../packages/api-client/src/index.ts"]
-    }
+    
   }
 }

@@ -1,18 +1,29 @@
 @layer base {
   *,
   ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    @apply border-border outline-ring/50 box-border;
+  ::before {
+    @apply box-border;
   }
 
   html {
     @apply antialiased scroll-smooth;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   body {
-    @apply bg-background text-foreground min-h-screen font-sans;
+    @apply bg-background text-foreground min-h-screen;
+  }
+
+  ::selection {
+    background: #686970;
+    color: #fff;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter.ttf') format('truetype');
+  }
+
+  * {
+    font-family: 'Inter', serif !important;
   }
 }
