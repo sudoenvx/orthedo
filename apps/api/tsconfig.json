@@ -1,9 +1,8 @@
 {
   "extends": "@orthedo/tsconfig/node.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "noEmit": true
+    "noEmit": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*"]
 }

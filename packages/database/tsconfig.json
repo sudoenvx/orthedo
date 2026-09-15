@@ -1,7 +1,9 @@
 {
-  "extends": "@orthedo/tsconfig/base.json",
+  "extends": "@orthedo/tsconfig/node.json",
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es2025",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "ignoreDeprecations": "6.0",
     "types": ["node"]
   },
@@ -12,7 +14,6 @@
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "src/generated"
+    "dist"
   ]
 }

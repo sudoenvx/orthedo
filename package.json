@@ -9,6 +9,8 @@
     "typecheck": "turbo run typecheck",
     "build:admin": "turbo run build --filter=@orthedo/admin-cpanel",
     "build:lab": "turbo run build --filter=@orthedo/lab-cpanel",
+    "build:db": "turbo run build --filter=@orthedo/database",
+    "build:api": "turbo run build --filter=@orthedo/api",
     "dev:admin": "turbo run dev --filter=@orthedo/admin-cpanel"
   },
   "license": "ISC",

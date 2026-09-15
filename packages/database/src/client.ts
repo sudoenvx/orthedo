@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "./generated/prisma/client";
+import { PrismaMariaDb } from '@prisma/adapter-mariadb'
+import { PrismaClient } from "./generated/prisma/client.js";
 
 function requireEnv(name: string): string {
     const value = process.env[name];
@@ -16,9 +16,8 @@ function requireEnv(name: string): string {
 }
 
 function createPrismaClient(): PrismaClient {
-    const adapter = new PrismaPg({
-        connectionString: requireEnv("DATABASE_URL"),
-    });
+    const databseUrl = requireEnv("DATABASE_URL")
+    const adapter = new PrismaMariaDb(databseUrl);
     return new PrismaClient({ adapter });
 }
 
@@ -27,13 +26,13 @@ function createPrismaClient(): PrismaClient {
 const globalForPrisma = globalThis as unknown as { __prisma?: PrismaClient };
 
 /** Process-wide PrismaClient bound to the PostgreSQL driver adapter. */
-export const prisma = globalForPrisma.__prisma ?? createPrismaClient();
+export const db = globalForPrisma.__prisma ?? createPrismaClient();
 
 if (process.env.NODE_ENV !== "production") {
-    globalForPrisma.__prisma = prisma;
+    globalForPrisma.__prisma = db;
 }
 
 /** Disconnect the shared PrismaClient (used by CLI scripts and graceful shutdowns). */
 export async function disconnect(): Promise<void> {
-    await prisma.$disconnect();
+    await db.$disconnect();
 }

@@ -37,7 +37,7 @@ export default function AdminApp() {
   return (
     <div className="min-h-screen bg-background text-foreground flex">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-border bg-card p-6 flex-col justify-between hidden md:flex">
+      <aside className="w-64 border-r border-border p-6 flex-col justify-between hidden md:flex">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">

@@ -4,22 +4,17 @@
     "private": true,
     "description": "shared database package",
     "type": "module",
-    "main": "./dist/index.js",
+    "main": "./src/index.ts",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
-            "import": "./dist/index.js"
-        },
-        "./package.json": "./package.json"
+            "import": "./src/index.ts",
+            "default": "./src/index.ts"
+        }
     },
-    "files": [
-        "dist",
-        "prisma",
-        "README.md"
-    ],
     "scripts": {
-        "build": "tsc -p tsconfig.build.json",
+        "build": "pnpm db:generate && tsc -p tsconfig.build.json",
         "typecheck": "tsc --noEmit",
         "db:generate": "prisma generate",
         "db:migrate": "prisma migrate dev",
@@ -37,7 +32,7 @@
         "typescript": "^6.0.2"
     },
     "dependencies": {
-        "@prisma/adapter-pg": "^7.10.0",
+        "@prisma/adapter-mariadb": "^7.10.0",
         "@prisma/client": "^7.10.0",
         "dotenv": "^17.4.2",
         "pg": "^8.23.0"
